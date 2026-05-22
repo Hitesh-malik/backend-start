@@ -37,7 +37,7 @@ exports.registerUser = async (req, res) => {
         await user.save();
         //create jwt token and send response in data we send id as id is commonly used in frontend to store in local storage and use for authentication
         const jwtToken = jwt.sign({ userId: user._id , email: user.email , name: user.name }, process.env.JWT_SECRET, { expiresIn: '24h' });
-        console.log(jwtToken, "this is the token");
+      //  console.log(jwtToken, "this is the token");
         user.password = undefined;// remove password from response as it is not needed in frontend and also for security reasons
         res.status(201).json({
             success: true,

@@ -27,7 +27,7 @@ exports.createTodo = async (req, res) => {
             }
         );
 
-        console.log("Updated user:", updatedUser);
+        // console.log("Updated user:", updatedUser);
 
         res.status(201).json({
             success: true,
